@@ -205,7 +205,7 @@ class Transducer(nn.Module):
                 ytu = self.joint(i, y[0][0])
                 out = F.log_softmax(ytu, dim=0)
                 p, pred = torch.max(out, dim=0)
-                pred = int(pred);
+                pred = int(pred)
                 logp += float(p)
                 if pred != self.blank:
                     y_seq.append(pred)
